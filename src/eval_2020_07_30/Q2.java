@@ -11,11 +11,35 @@ package eval_2020_07_30;
  */
 public class Q2 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+   public static void main(String[] args) {
+       String pol = "kayak";
+        EstPalindrome(pol);
     }
 
+    public static boolean EstPalindrome(String Mot)
+    {
+        int NbLettre;
+        NbLettre = Mot.length();
+
+        for (int i = 0; i != NbLettre/2; i++)
+        {
+            if (Mot.charAt(i) != Mot.charAt(NbLettre - i))
+                return(false);
+        }
+            return(true);
+    }
+
+    public static int Nbpld(String[] Liste)
+        {
+            int i;
+            i = 0;
+
+
+            while (EstPalindrome(Liste[i]) == true && i != Liste[i].length())
+            {
+                i++;
+            }
+            return(i);
+        }
 }
+
